@@ -17,29 +17,47 @@ class EquationsSolver:
 
 		else: 
 
-			raise Exception("La función no fue definida")
+			raise Exception("The function is not defined")
+			
+	def __str__(self):
+	
+		try:
+	
+			return f"The interval or point: {self.x0}"
 
-	def InitialCondition(self, x0, tol, maxiter = None):
+		except:
+		
+			raise Exception("Parametrs is not defined")
+
+	def initial_conditions(self, x0, tol, maxiter = None):
+	
+		if tol <=0 or maxiter <=0:
+		
+			raise Exception("La toleracia o las iteraciones estan mal definidas") 
 
 		if isinstance(x0, (int, float)):
 	
 			self.point, self.interval = True, False
 			x0 = float(x0)
 
-		else:
+		elif isinstance(x0, (list, tuple)):
 
 			self.point, self.interval = False, True
 			x0 = list(x0)
 
+		else:
+		
+			raise Exception("The interval or point is not defined")
+
 		self.x0, self.tol, self.maxiter = x0, tol, maxiter
 
-class Biseccion(EquationsSolver):
+class Bisection(EquationsSolver):
 
 	def Solve(self):
 
 		if isinstance(self.x0, (int, float)):
 	
-			raise ValueError("No se definió un intervalo")
+			raise ValueError("The interval is not defined")
 
 		a, b  = self.x0 
 		f, tol = self.f, self.tol
@@ -62,7 +80,6 @@ class Biseccion(EquationsSolver):
 
 			if b - a < tol:
 
-				#return round(x, int(abs(log10(tol)))
 				return x
       
 			elif np.sign(f(a)) * np.sign(f(x)) > 0:
@@ -82,7 +99,7 @@ class Newton_Rhapson(EquationsSolver):
 	
 		if df(x) == 0:
 
-			raise ValueError("Division por cero")
+			raise ValueError("Division by zero. The method ended.")
     		
 		for i in range(maxiter):
 
@@ -94,7 +111,7 @@ class Newton_Rhapson(EquationsSolver):
 
 		            return x
 
-		raise RuntimeError(f"No hubo convergencia después de {maxiter} iteraciones")
+		raise RuntimeError(f"There was no convergence after {maxiter} iterations")
 
 class Secant(EquationsSolver):
 

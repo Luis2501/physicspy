@@ -1,3 +1,7 @@
+# <a href="#"><img alt="PhysicsPy" src="Img/PhysicsPyIm1.png" height="60"></a>
+
+___________________________________________
+
 # PhysicsPy: Physics with Python
 
 **PhysicsPy** is a package of scientific computing with Python. This package was created to solve problems in *Computational Physics*. Although there are currently packages that serve this purpose, for example, Numpy, Scipy, etc. 
