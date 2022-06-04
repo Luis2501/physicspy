@@ -15,12 +15,39 @@ class MRU:
 	def __init__(self, v):
 
 		self.v = v
+		
+	def __str__(self):
+	
+		return f"The velocity is v = {self.v} m/s"
 
 	def __call__(self, u, t):
 
 		x, v = u, self.v
 
 		return v
+		
+	def momentum(self, m):
+	
+		"""
+		This function for get the lineal momentum that given by 
+		
+		p = mv
+		
+		where m is the mass of particle
+		"""
+	
+		return m*self.v
+		
+	def energy(self, m):
+	
+		"""
+		Function for get the energy, in this case the potential energy is zero. 
+		The kinetic energy is given by
+		
+		K = 1/2 m v² 
+		"""
+	
+		return 1/2*m*(self.v**2)
 
 class MRUA:
 

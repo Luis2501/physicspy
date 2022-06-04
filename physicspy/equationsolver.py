@@ -1,7 +1,19 @@
-from math import log10
+"""
+
+
+Note:
+
+This module
+
+"""
+
 import numpy as np 
 
 class EquationsSolver:
+
+	"""
+	This class allows 
+	"""
 
 	def __init__(self, f, df = None):
 

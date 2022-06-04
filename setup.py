@@ -8,6 +8,7 @@ setup(
 	author="Luis",
 	author_email="lsgm16308@gmail.com"
 	url="https://luis2501.github.io/portfolio/portfolio-2/"
-	packages=["PhysicsPy", "PhysicsPy/Physics"]
+	packages=["physicspy", "physicspy/physics", "physicspy/integration"]
+	install_requires=["numpy", "matplotlib", "plotly"]
 	
 )
