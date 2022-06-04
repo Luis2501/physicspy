@@ -1,4 +1,4 @@
-# <a href="#"><img alt="PhysicsPy" src="Img/PhysicsPyIm1.png" height="60"></a>
+# <a href="#"><img alt="PhysicsPy" src="img/PhysicsPyIm1.png" height="60"></a>
 
 ___________________________________________
 
